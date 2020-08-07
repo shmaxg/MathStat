@@ -48,3 +48,9 @@ class EmpiricalDistribution:
         plt.step([max(self.x), max(self.x)+1], [self.F[-1], 1], 'C0')
         plt.axis('equal')
         plt.show()
+
+    def calc_stat_kolm_smir(self, F):
+        n = len(self.x)
+        dnp = max([abs((k+1)/n-F(self.x[k])) for k in range(n)])
+        dnm = max([abs(k/n-F(self.x[k])) for k in range(n)])
+        return max([dnp, dnm])
