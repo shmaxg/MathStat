@@ -2,7 +2,7 @@ import mathstat as ms
 import matplotlib.pyplot as plt
 
 
-def func(x):
+def cdf_uniform(x):
     if x <= 0:
         return 0
     elif 0 < x <= 1:
