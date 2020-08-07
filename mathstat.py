@@ -17,11 +17,11 @@ class Sample:
             self.x = rnd.uniform(self.params['a'], self.params['b'], (n,))
         elif self.dist_type == 'normal':
             self.x = rnd.normal(self.params['mu'], np.sqrt(self.params['sigma2']), (n,))
-        elif self.dist_type == 'exp':
+        elif self.dist_type == 'exponential':
             self.x = rnd.exponential(1.0/self.params['lam'], (n,))
-        elif self.dist_type == 'bern':
+        elif self.dist_type == 'bernoulli':
             self.x = rnd.binomial(1, self.params['p'], (n,))
-        elif self.dist_type == 'binom':
+        elif self.dist_type == 'binomial':
             self.x = rnd.binomial(self.params['N'], self.params['p'], (n,))
         else:
             raise NotImplementedError
